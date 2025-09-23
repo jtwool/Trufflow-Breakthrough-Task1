@@ -1,0 +1,9 @@
+Representation,Method,k,Silhouette
+Role means (8-dim),KMeans,3,0.851158675092405
+Role means (8-dim),KMeans,4,0.8687091680037328
+Role means (8-dim),KMeans,5,0.933113627229332
+Role means (8-dim),KMeans,6,0.9661969420545483
+Role means (8-dim),KMeans,7,0.9631850236343544
+Role means (8-dim),KMeans,8,0.9834557457986388
+Role means (8-dim),KMeans,9,0.9743887732550746
+Role means (8-dim),KMeans,10,0.9673060323981396

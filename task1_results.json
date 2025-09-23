@@ -1,0 +1,16 @@
+{
+  "results": [
+    {
+      "Feature Set / Variant": "All features (NB)",
+      "Precision": 0.9028533849694933,
+      "Recall": 0.9451902849493211,
+      "F1": 0.9235196292766784,
+      "PR-AUC": 0.9774733165108653,
+      "Accuracy (+ve)": 0.9451902849493211,
+      "Accuracy (mean)": 0.9867125488986641,
+      "Threshold": 0.9806067807015026,
+      "Valid size": 308035,
+      "Pos rate (valid)": 0.0848767185547097
+    }
+  ]
+}

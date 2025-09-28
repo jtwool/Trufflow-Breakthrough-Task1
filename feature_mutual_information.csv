@@ -1,0 +1,7 @@
+rank,feature,MI
+1,cost_mean,0.289616
+2,data_mean,0.174757
+3,cost_sum,0.11771
+4,data_sum,0.073825
+5,req_count,0.020684
+6,error_rate,0.000474

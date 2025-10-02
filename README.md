@@ -36,10 +36,11 @@ Confusion (validation): TN=279,230; FP=2,660; FN=1,433; TP=24,712
 Validation positive rate: ~8.49%; Predicted positive rate: ~8.89%
 Variants (for comparison)
 
-Feature Set / Variant Precision Recall F1 PR-AUC Accuracy (Mean) Threshold Valid Size
-Counts only (NB) 0.1057 0.8179 0.1830 0.1021 0.3043 0.3514 308,035
-All features (NB) 0.9029 0.9452 0.9235 0.9775 0.9867 0.9806 308,035
-PCA(3) + NB 0.6811 0.9356 0.7883 0.6951 0.9573 0.1549 308,035
+Feature Set / Variant	Precision	Recall	F1	PR-AUC	Accuracy (Mean)	Threshold	Valid Size
+Counts only (NB)	0.1057	0.8179	0.1830	0.1021	0.3043	0.3514	308,035
+All features (NB)	0.9029	0.9452	0.9235	0.9775	0.9867	0.9806	308,035
+PCA(3) + NB	0.6811	0.9356	0.7883	0.6951	0.9573	0.1549	308,035
+
 Top incidents (examples)
 
 ECOMLP -> MCSCBT: p=1.00, cost/tx ~ 589.99, data/tx ~ 11.80
@@ -47,8 +48,8 @@ CUSTPRT -> MCSCBT: p=1.00, cost/tx ~ 577.54, data/tx ~ 12.18
 ECOMLP -> MCSCBT: p=1.00, cost/tx ~ 584.32, data/tx ~ 11.85
 These are unusually expensive/heavy hours and good places to investigate first.
 
-Feature selection and creation (Task 1)
-We examined which inputs carry unique signal and which overlap. Total cost and total data moved almost together one-to-one (correlation ≈ 0.906), and average cost and average data did too (correlation ≈ 0.912). The error_rate column barely varied and added almost no information. Mutual-information scores ranked the inputs as: cost_mean ≈ 0.290, data_mean ≈ 0.175, cost_sum ≈ 0.118, data_sum ≈ 0.074, req_count ≈ 0.021, error_rate ≈ 0.000. Based on that, we kept three non-redundant features—request count, total cost, and average cost—and retrained the same Naive Bayes with the same time split and F1-based thresholding. The simpler model performed better on validation: PR-AUC ≈ 0.9909, Precision/Recall ≈ 0.9772/0.9670, F1 ≈ 0.9713, Accuracy ≈ 0.9951, best threshold ≈ 0.9694; confusion at that threshold: TN=281,251; FP=639; FN=858; TP=25,287. We also tried extra engineered signals (log versions of cost and requests, pair-wise “how unusual is this pair right now” z-scores, and time-of-day/day-of-week cycles); on this dataset those were slightly worse (PR-AUC ≈ 0.9819, F1 ≈ 0.9377), so we kept the lean 3-feature model for Milestone 1.
+Feature Selection & Feature Creation (Task 1)
+We audited the six inputs to see which ones truly add signal and which ones overlap. Feature-to-feature correlations showed strong redundancy: total cost and total data moved almost one-to-one (corr ≈ 0.91), and average cost and average data did too (corr ≈ 0.91). The error_rate column was nearly constant and contributed very little. Mutual-information scores (higher is better) ranked the inputs as: cost_mean ≈ 0.290, data_mean ≈ 0.175, cost_sum ≈ 0.118, data_sum ≈ 0.074, req_count ≈ 0.021, error_rate ≈ 0.000. Based on this, we kept three non-redundant features—request count, total cost, and average cost—and retrained the exact same Naive Bayes with the same time split and F1-based thresholding. The simpler model performed better on validation: PR-AUC ≈ 0.9909, Precision/Recall ≈ 0.9772/0.9670, F1 ≈ 0.9713, Accuracy ≈ 0.9951, best threshold ≈ 0.9694; confusion at that threshold: TN=281,251; FP=639; FN=858; TP=25,287. We also tested engineered features (log transforms of cost/requests, pair-wise “how unusual is this pair right now” z-scores, and hour/day cyclical encodings). On this dataset those extras were slightly worse (PR-AUC ≈ 0.9819, F1 ≈ 0.9377), so for Milestone 1 we adopted the lean 3-feature Naive Bayes as the core model.
 
 Task 2 - Service Similarity (Cosine) and Clustering
 We built compact 8-dimensional "role" vectors per service (consumer and supplier behavior averaged, request-weighted), then:
@@ -72,13 +73,12 @@ We rank apps by anomaly impact (model probability x cost_sum) over the validatio
 
 Top 5 by impact
 
-App Anomalies (total) Score (impact approx) Latest Month Cost MoM % Value/Cost Outages (count / duration)
-
-1 MCSCBT 6,079 4,874,486.86 2025-05 1,522,083.05 0.07696 0.01583 83 / 13,955
-2 CLVMDL 6,695 2,517,525.95 2025-05 1,249,448.80 0.06576 0.01810 287 / 85,770
-3 CSTSEG 3,332 1,580,676.07 2025-05 849,081.70 0.06635 0.01427 1,571 / 239,785
-4 SELENE 0 1,402,166.63 2025-05 4,452,273.55 0.04601 0.02925 2 / 205
-5 CUSTPRT 2,398 1,370,124.07 2025-05 708,209.95 0.10269 0.00000 16 / 1,505
+#	App	Anomalies (total)	Score (impact approx)	Latest Month	Cost	MoM %	Value/Cost	Outages (count / duration)
+1	MCSCBT	6,079	4,874,486.86	2025-05	1,522,083.05	0.07696	0.01583	83 / 13,955
+2	CLVMDL	6,695	2,517,525.95	2025-05	1,249,448.80	0.06576	0.01810	287 / 85,770
+3	CSTSEG	3,332	1,580,676.07	2025-05	849,081.70	0.06635	0.01427	1,571 / 239,785
+4	SELENE	0	1,402,166.63	2025-05	4,452,273.55	0.04601	0.02925	2 / 205
+5	CUSTPRT	2,398	1,370,124.07	2025-05	708,209.95	0.10269	0.00000	16 / 1,505
 Keep, Trim and Fix now
 
 Keep (necessary): core paths that carry real traffic reliably at normal cost.
@@ -119,4 +119,3 @@ Pick best models, tune thresholds, and (optionally) execute one bonus (early war
 Finalize comparison tables, brief slide deck, and tag a release.
 License
 Apache-2.0.
-

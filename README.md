@@ -53,7 +53,7 @@ In this section, we created separate dataframes for the different datasets, visu
 
 From the boxplots, we first looked at the "monthly_metrics" data where we found that there is a large range of data for "cost" when looking at "monthly/metric" against "monthly/value", with a lot of outliers.
 
-![monthly_metrics boxplot](mx_box.png)
+![monthly_metrics boxplot](mm_box.png)
 
 We then looked at the "daily_metrics" data, with "daily/metric" vs "daily/value", where we found that "cost" had a large variability again, but so did "outage_duration," both having many outliers as well.
 

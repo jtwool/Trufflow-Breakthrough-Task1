@@ -26,7 +26,7 @@ Baseline classifier: Naïve Bayes
 
 Similarity: cosine k-means clustering
 
-**Data Overview**
+### Data Overview
 
 We used Trufflow's transactional data to:
 
@@ -47,7 +47,7 @@ The datasets given to us:
 
 The dataset includes numeric and non-numeric data, such as names and reasonings. We downloaded the dataset to use locally because of size complications, and it was already in tidy format and cleaned. We did not find any duplicate or null values, and the number of observations only changed since while we kept all observations, we aggregated them by "monthly/metric", "daily/metric", "transaction/data", and "transaction/cost" to reduce some redundancies. This added to the number of variables, and we had also removed some constant/ no-variance columns and exact-duplicate columns. We renamed these columns to have a clearer and more standard labeling with \[req_count, cost_sum, data_sum, cost_mean, and data\]
 
-**EDA & Feature Engineering**
+### EDA & Feature Engineering
 
 In this section, we created separate dataframes for the different datasets, visualizing the data with scatterplots and boxplots.
 
@@ -68,7 +68,7 @@ Working on the features, by pivoting, we were able to create 18 more for both "d
 
 For all three of the datasets, we discovered that there is high positive correlation between "cost_sum" and "data_sum," with "cost_sum" being marked as one of the best features for each of them as well. In "daily_metrics" and "monthly_metrics", we found that "req_count" and "cost_mean" were also best features based on correlation. In every dataset, we dropped "tenant/id" for being constant (they were all 'DEMO'), and from "daily_metrics" and "monthly_metrics" we also dropped "value" since it had duplicate data. We dropped others as well, but these were the ones that showed trends through the datasets.
 
-**Modeling**
+### Modeling
 
 We sorted our daily_features dataset by time and marked the top 2% of "cost_sum" as anomalous. We then split the data into training and test sets to create Gaussian Naive Bayes models with all 6 features and 2 features, and a Logistic Regression classifier with 3 features. Below are the metrics for the quality of the decision models, showing that the logistic regression model seems to be the best overall, with the highest F1 and accuracy stats and good recall.
 
@@ -93,7 +93,7 @@ Based on this best model, we were able to find the top 10 anomalous transactions
 | 7217765 | 2025-05-30 | Mercury Customer Portal | Mercury Customer Service Chatbot | 651.55 |
 | 6170088 | 2025-04-07 | Mecury eCommerce Platform | Mercury Customer Service Chatbot | 647.40 |
 
-**Clustering**
+### Clustering
 
 Below is the graph we created based on a 3-means clustering that was PCA-reduced, showing that cluster 1 slightly overlaps with cluster 0 in the -2.5 to 2.5 range with PC1, and with PC2, overlapping around -1 to 4.
 

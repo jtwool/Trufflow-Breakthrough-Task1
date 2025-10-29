@@ -70,7 +70,7 @@ For all three of the datasets, we discovered that there is high positive correla
 
 ### Modeling
 
-We sorted our daily_features dataset by time and marked the top 2% of "cost_sum" as anomalous. We then split the data into training and test sets to create Gaussian Naive Bayes models with all 6 features and 2 features, and a Logistic Regression classifier with 3 features. Below are the metrics for the quality of the decision models, showing that the logistic regression model seems to be the best overall, with the highest F1 and accuracy stats and good recall.
+We sorted our daily_features dataset by time and marked the top 2% of "cost_sum" as anomalous. We then split the data into training and test sets to create Gaussian Naive Bayes models with all 6 features and 3 features, and a Logistic Regression classifier with 3 features. Below are the metrics for the quality of the decision models, showing that the logistic regression model seems to be the best overall, with the highest F1 and accuracy stats and good recall.
 
 | Model | PR-AUC | AP  | Precision | Recall | F1  | Accuracy |
 | --- | --- | --- | --- | --- | --- | --- |

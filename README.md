@@ -70,7 +70,7 @@ For all three of the datasets, we discovered that there is high positive correla
 
 ### Modeling
 
-We sorted our daily_features dataset by time and marked the top 2% of "cost_sum" as anomalous. We then split the data into training and test sets to create Gaussian Naive Bayes models with all 6 features and 3 features, and a Logistic Regression classifier with 3 features. Below are the metrics for the quality of the decision models, showing that the logistic regression model seems to be the best overall, with the highest F1 and accuracy stats and good recall.
+We sorted our daily_features dataset by time and marked the top 2% of "cost_sum" as anomalous. We then split the data into training and test sets to create Gaussian Naive Bayes models with all 6 features and 3 features, and a Logistic Regression classifier with 3 features. Below are the metrics for the quality of the decision models, showing that the logistic regression model seems to be the best overall, with the highest F1 and accuracy stats and good recall. The best recall would be attributed to the Gaussian Naive Bayes models though, so we would value it more as we are focused on tracking anomalies and false negatives could be detrimental for the company.
 
 | Model | PR-AUC | AP  | Precision | Recall | F1  | Accuracy |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -78,7 +78,7 @@ We sorted our daily_features dataset by time and marked the top 2% of "cost_sum"
 | GNB-3f | 0.980345 | 0.980412 | 0.572549 | 1.000000 | 0.728180 | 0.982837 |
 | LogReg-3f | 0.980345 | 0.980412 | 0.941606 | 0.883562 | 0.911661 | 0.996064 |
 
-Based on this best model, we were able to find the top 10 anomalous transactions based on "cost_sum" and "date" (below).
+Based on the Gaussian Naive Bayes model, we were able to find the top 10 anomalous transactions based on "cost_sum" and "date" (below).
 
 |     | date | consumer | supplier | cost_sum |
 | --- | --- | --- | --- | --- |

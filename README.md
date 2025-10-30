@@ -102,8 +102,8 @@ Below is the graph we created based on a 3-means clustering that was PCA-reduced
 
 Below is a table for the summary of the features based on the k-means clustering.
 
-| cluster | requests_made | cost | value | data_used | data_sent | cost_per_request_made | cost_per_request_received |     | data_per_request | data_sent_per_received | data_used_per_received |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 0   | 207.796493 | 7755.987210 | 208.683799 | 133.972376 | 208.683799 | 39.899386 | 89.228991 |     | 0.698134 | 1.217081 | 1.743496 |
-| 1   | 85.138140 | 9368.376057 | 4.193110 | 197.442333 | 4.193110 | 106.524119 | 12.891830 |     | 2.253433 | 0.193480 | 0.193480 |
-| 2   | 4946.383562 | 143694.386712 | 4204.578493 | 4204.578493 | 4204.578493 | 29.049613 | 87.148840 |     | 0.850043 | 2.550130 | 2.550130 |
+| cluster | requests_made | cost | value | data_used | data_sent | cost_per_request_made | cost_per_request_received | data_per_request | data_sent_per_received | data_used_per_received |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0   | 207.796493 | 7755.987210 | 208.683799 | 133.972376 | 208.683799 | 39.899386 | 89.228991 | 0.698134 | 1.217081 | 1.743496 |
+| 1   | 85.138140 | 9368.376057 | 4.193110 | 197.442333 | 4.193110 | 106.524119 | 12.891830 | 2.253433 | 0.193480 | 0.193480 |
+| 2   | 4946.383562 | 143694.386712 | 4204.578493 | 4204.578493 | 4204.578493 | 29.049613 | 87.148840 | 0.850043 | 2.550130 | 2.550130 |

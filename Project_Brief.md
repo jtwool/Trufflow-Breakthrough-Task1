@@ -1,4 +1,4 @@
-# 🧩 Trufflow Project Brief
+#  Trufflow Project Brief
 **Milestones 1 & 2 Summary**  
 *Team Trufflow 1B — AI Studio Fellowship Project*  
 Tools: **NumPy, scikit-learn, toolz, transformers** License: Apache 2.0
@@ -10,7 +10,7 @@ The Trufflow project analyzes structured **app-to-app transaction data** to:
 
 Both milestones build the foundation for an intelligent anomaly-detection pipeline that can later be automated and scaled.
 
-## 🧠 Milestone 1 — Baseline Analysis & EDA
+##  Milestone 1 — Baseline Analysis & EDA
 ### Goal
 Understand the dataset, identify key features, and train a **baseline** to detect anomalies.
 
@@ -21,7 +21,7 @@ Understand the dataset, identify key features, and train a **baseline** to detec
 | F1-Score | 0.879 |
 | Accuracy | 0.947 |
 
-## 🧩 Milestone 2 — Model Training, Comparison & Refinement
+##  Milestone 2 — Model Training, Comparison & Refinement
 ### Task 1 — Baseline vs Contenders (Anomaly Detection)
 We trained **Naive Bayes, Logistic Regression, KNN, Decision Tree** on two feature sets (All 6, Top 3) and evaluated on a 20% time-based validation split.
 
@@ -62,15 +62,16 @@ Created **Milestone2_Final_Report.md**, updated **README.md**, and saved all fig
 ### Task 5 — Bonus Investigation
 Planned next steps: temporal features (rolling windows), Isolation Forest / Autoencoder for unsupervised anomalies, and graph embeddings for service-network effects.
 
-## 📊 Milestone 1 vs Milestone 2 — Side-by-Side
+##  Milestone 1 vs Milestone 2 — Side-by-Side
 | Metric | Milestone 1 (Baseline) | Milestone 2 (Best) |
 |:--|--:|--:|
 | PR-AUC | 0.931 | 1 |
 | F1 | 0.879 | 0.9994 |
 | Accuracy | 0.947 | 0.9999 |
 
-## 🎯 Final Takeaway
+## Final Takeaway
 - **KNN** emerged as the strongest model with near-perfect precision and recall.
 - Clustering produced clear service groups to monitor.
 - Documentation and visuals make the solution easy to explain and extend.
 - Next: add temporal + graph features and evaluate unsupervised anomaly models.
+

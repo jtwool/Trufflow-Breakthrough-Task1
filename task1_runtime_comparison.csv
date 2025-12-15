@@ -1,0 +1,4 @@
+model,fit_time_s,predict_time_s
+GaussianNB,0.007,0.001
+LogisticRegression,0.220,0.002
+KNN(k=7),0.068,0.036

@@ -1,0 +1,3 @@
+Feature_Set,Avg_PR_AUC,Max_PR_AUC,Avg_F1,Max_F1,Avg_Accuracy,Max_Accuracy
+All 6,0.994,1.000,0.766,0.999,0.767,1.000
+Top 3,0.994,0.999,0.985,0.994,0.997,0.999

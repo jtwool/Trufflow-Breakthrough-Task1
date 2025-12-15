@@ -1,0 +1,15 @@
+{
+  "avg_precision": 0.9341050633862986,
+  "precision": 0.9479100315653884,
+  "recall": 0.8258660451120402,
+  "f1": 0.8826894433679993,
+  "accuracy": 0.9422143587579334,
+  "threshold": 0.47559909473885675,
+  "selected_features": [
+    "req_rel_sup",
+    "req_rel_con",
+    "cost_mean_rel_con",
+    "cost_mean_rel_sup"
+  ],
+  "valid_size": 308035
+}

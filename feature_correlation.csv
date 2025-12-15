@@ -1,0 +1,7 @@
+,req_count,error_rate,cost_sum,cost_mean,data_sum,data_mean
+req_count,1.000,nan,0.522,-0.708,0.381,-0.711
+error_rate,nan,nan,nan,nan,nan,nan
+cost_sum,0.522,nan,1.000,-0.198,0.799,-0.175
+cost_mean,-0.708,nan,-0.198,1.000,-0.187,0.991
+data_sum,0.381,nan,0.799,-0.187,1.000,-0.122
+data_mean,-0.711,nan,-0.175,0.991,-0.122,1.000

@@ -109,13 +109,13 @@ See: https://opensource.org/licenses/Apache-2.0
 
 ---
 
-## 📄 **References** (Optional but encouraged)
+## 📄 **References**
 
 Cite relevant papers, articles, or resources that supported your project.
 
 ---
 
-## 🙏 **Acknowledgements** (Optional but encouraged)
+## 🙏 **Acknowledgements**
 
 Thank your Challenge Advisor, host company representatives, TA, and others who supported your project.
 

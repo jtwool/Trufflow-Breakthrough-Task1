@@ -109,14 +109,6 @@ See: https://opensource.org/licenses/Apache-2.0
 
 ---
 
-## 📄 **References**
-
-Cite relevant papers, articles, or resources that supported your project.
-
----
-
 ## 🙏 **Acknowledgements**
-
-Thank your Challenge Advisor, host company representatives, TA, and others who supported your project.
 
 Thank you to J.T. and Sai, our Challenge Advisor and AI Studio Coach, who have been guiding and helping our team throughout this project. Their mentorship and thoughtful guidance helped shape our project’s success, and we couldn’t have done it without them! 

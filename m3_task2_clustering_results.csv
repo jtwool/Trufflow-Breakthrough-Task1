@@ -1,0 +1,17 @@
+Representation,Method,k,Silhouette
+Role means (8-d),KMeans,3,0.851158675092405
+Role means (8-d),KMeans,4,0.8687091680037328
+Role means (8-d),KMeans,5,0.933113627229332
+Role means (8-d),KMeans,6,0.9661969420545483
+Role means (8-d),KMeans,7,0.9631850236343544
+Role means (8-d),KMeans,8,0.9834557457986388
+Role means (8-d),KMeans,9,0.9743887732550746
+Role means (8-d),KMeans,10,0.9673060323981396
+Role means (8-d),"Agglomerative(avg, cosine)",3,0.851158675092405
+Role means (8-d),"Agglomerative(avg, cosine)",4,0.8820796951992097
+Role means (8-d),"Agglomerative(avg, cosine)",5,0.933113627229332
+Role means (8-d),"Agglomerative(avg, cosine)",6,0.9661969420545483
+Role means (8-d),"Agglomerative(avg, cosine)",7,0.9569899150823963
+Role means (8-d),"Agglomerative(avg, cosine)",8,0.9834557457986388
+Role means (8-d),"Agglomerative(avg, cosine)",9,0.9743887732550746
+Role means (8-d),"Agglomerative(avg, cosine)",10,0.9570967842094384

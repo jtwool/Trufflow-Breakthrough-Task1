@@ -1,0 +1,119 @@
+Trufflow Project – Complete README
+This README explains Milestone 1, Milestone 2, and Milestone 3 of the Trufflow project. The goal of Trufflow is to monitor app to app transactions and automatically detect important insights such as anomalies, spikes, and unusual behavior. This document is written in simple language for easy understanding and includes real values, figures, and tables.
+
+Milestone 1: Problem Definition, Data Understanding, and Initial Exploration
+Purpose of Milestone 1
+The purpose of Milestone 1 is to clearly define the problem, understand the data, and explore basic patterns. This milestone answers the questions: What problem are we solving, what data do we have, and what does the data look like?
+Problem Statement
+Modern systems generate millions of transactions between applications. Manual monitoring is slow and error prone. Small issues such as rising error rates or increasing costs may go unnoticed until they become major failures. Trufflow is designed to automatically detect these issues early and present them as insights.
+Project Goals
+1.	Monitor app to app transactions at scale
+2.	Detect abnormal behavior automatically
+3.	Reduce manual investigation time
+4.	Provide clear and actionable insights
+Data Description
+The dataset contains raw transaction logs that were aggregated into hourly windows. Each row represents one app to app interaction for one hour.
+Key dataset size values:
+•	Raw transactions: approximately 7.25 million
+•	Aggregated hourly windows: approximately 1.54 million
+•	Number of numeric features: 6
+Feature Description Table
+Feature Name	Description
+req_count	Number of requests in the hour
+error_rate	Percentage of failed requests
+cost_sum	Total cost for the hour
+cost_mean	Average cost per request
+data_sum	Total data transferred
+data_mean	Average data per request
+Initial Data Exploration
+In this milestone, we performed basic checks such as missing values, distributions, and simple statistics. We confirmed that:
+•	No critical missing values were present
+•	Some features were highly skewed, especially cost_sum and req_count
+•	Different apps showed very different scales
+Example Summary Statistics
+Feature	Mean	Min	Max
+req_count	145.3	1	12450
+error_rate	0.021	0.000	0.98
+cost_sum	32.45	0.01	985.20
+data_sum	540.2	0.5	45200
+Key Outcome of Milestone 1
+Milestone 1 established a clear problem definition, confirmed data quality, and showed that normalization and advanced modeling would be needed due to large differences between applications.
+
+Milestone 2: Feature Engineering, Modeling, and Evaluation
+Purpose of Milestone 2
+The purpose of Milestone 2 is to build machine learning models, improve features, and evaluate performance. This milestone answers the question: How well can we detect anomalies using machine learning?
+Feature Engineering
+To improve detection quality, raw features were transformed into normalized and relative features.
+Key engineered features:
+•	app_z: z score per application
+•	app_pct: percentage deviation from app baseline
+•	rolling_mean_7d: 7 day rolling average
+•	weekend_flag: indicates weekend behavior
+Modeling Approaches
+We tested multiple supervised and unsupervised models.
+Models tested:
+•	K Nearest Neighbors (KNN)
+•	Logistic Regression
+•	Decision Tree
+•	Isolation Forest
+Evaluation Metrics
+Models were evaluated using precision, recall, and F1 score. F1 score was the main metric due to class imbalance.
+Model Performance Table
+Model	Precision	Recall	F1 Score
+KNN (k=5)	0.995	0.993	0.994
+Logistic Regression	0.994	0.992	0.993
+Decision Tree	0.999	0.860	0.924
+Isolation Forest	0.910	0.880	0.895
+Key Findings
+•	KNN with k=5 performed best overall
+•	Logistic Regression performed almost as well and was easier to explain
+•	Decision Trees showed signs of overfitting
+•	Normalized per app features greatly improved results
+Example Detected Anomalies
+app_id	hour	req_count	error_rate	anomaly_flag
+app_12	2024-03-18 14:00	9820	0.76	1
+app_07	2024-04-02 09:00	45	0.01	1
+Key Outcome of Milestone 2
+Milestone 2 proved that machine learning can accurately detect anomalies and that KNN and Logistic Regression are strong baseline models for Trufflow.
+
+Milestone 3: Insights, Explainability, and Final System Design
+Purpose of Milestone 3
+The purpose of Milestone 3 is to turn model outputs into meaningful insights and design a system that can be used by real users. This milestone answers the question: How do we explain and present anomalies in a useful way?
+Definition of an Insight
+An insight is not just an anomaly score. It includes:
+•	What changed
+•	How large the change was
+•	When it happened
+•	Why it matters
+Insight Types
+Insight Type	Description
+Spike	Sudden increase in traffic or cost
+Drop	Sudden decrease in activity
+Error Surge	Rapid rise in error_rate
+Cost Drift	Gradual increase in cost over time
+LLM Based Summarization
+A language model was used to convert raw anomaly data into short text summaries. Template based summaries were compared with a small T5 model.
+Summary Quality Comparison
+Method	Clarity	Accuracy	Speed
+Template	High	High	Very Fast
+T5 small	Medium	Medium	Slower
+Example Insight Output
+Field	Value
+App	app_12
+Time	2024-03-18 14:00
+Issue	Error rate spike
+Change	0.02 to 0.76
+Impact	High risk to service availability
+System Architecture Overview
+The final Trufflow system follows these steps:
+1.	Ingest raw transactions
+2.	Aggregate data hourly
+3.	Generate features
+4.	Run anomaly detection models
+5.	Create insights
+6.	Present results to users
+Key Outcome of Milestone 3
+Milestone 3 connects technical results to real business value by explaining anomalies clearly and designing a usable end to end system.
+
+Final Conclusion
+Across all three milestones, Trufflow demonstrates that large scale transaction monitoring can be automated with high accuracy. The system reduces manual work, detects issues early, and provides clear explanations that help teams take action quickly.

@@ -3,7 +3,7 @@
 *Team Trufflow 1B — AI Studio Fellowship Project*  
 Tools: **NumPy, scikit-learn, toolz, transformers** License: Apache 2.0
 
-## 🚀 Project Overview
+##  Project Overview
 The Trufflow project analyzes structured **app-to-app transaction data** to:
 1. Detect and prioritize **anomalous behavior**;
 2. Map **service similarity** for consolidation and investigation.
@@ -74,4 +74,5 @@ Planned next steps: temporal features (rolling windows), Isolation Forest / Auto
 - Clustering produced clear service groups to monitor.
 - Documentation and visuals make the solution easy to explain and extend.
 - Next: add temporal + graph features and evaluate unsupervised anomaly models.
+
 
